@@ -12,7 +12,7 @@ Hoffmann ve ark. (2022), kayıp ile parametre sayısı $N$ ve eğitim token say�
 $D$ arasındaki ilişkiyi şu biçimde modellemiştir:
 
 $$
-\mathcal{L}(N, D) \;=\; E \;+\; \frac{A}{N^{\alpha}} \;+\; \frac{B}{D^{\beta}}
+\mathcal{L}(N, D) = E + \frac{A}{N^{\alpha}} + \frac{B}{D^{\beta}}
 $$
 
 Uydurulan katsayılar: $E = 1{,}69$, $A = 406{,}4$, $B = 410{,}7$,
@@ -131,7 +131,7 @@ sentetik veri gerektirir.
 Eğitilmiş model, her konumda $p = \mathrm{softmax}(z)$ dağılımını üretir.
 Metin üretmek için bu dağılımdan örnekleme yapılır.
 
-**En olası token'ı seçmek (greedy) neden yetersiz.** $\arg\max$ çözümlemesi
+**En olası token'ı seçmek (greedy) neden yetersiz.** $\operatorname*{argmax}$ çözümlemesi
 belirlenimcidir ve yüksek olasılıklı döngülere girme eğilimindedir; üretilen
 metin tekrarlı olur. Bu, modelin değil çözümleme kuralının kusurudur.
 

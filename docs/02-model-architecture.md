@@ -57,7 +57,7 @@ olarak büyür ya söner. Normalizasyon her alt katmanın girdisini sabit ölçe
 çeker.
 
 $$
-\mathrm{RMSNorm}(x) \;=\; \frac{x}{\sqrt{\dfrac{1}{d}\sum_{i=1}^{d} x_i^2 + \varepsilon}} \odot g
+\mathrm{RMSNorm}(x) = \frac{x}{\sqrt{\dfrac{1}{d}\sum_{i=1}^{d} x_i^2 + \varepsilon}} \odot g
 $$
 
 $g \in \mathbb{R}^{d}$ öğrenilen kazanç vektörüdür, $\varepsilon = 10^{-5}$.
@@ -89,7 +89,7 @@ $$
 Dikkat ağırlıkları ve çıktı:
 
 $$
-A = \mathrm{softmax}\!\left(\frac{QK^{\top}}{\sqrt{d_h}} + M\right), \qquad
+A = \mathrm{softmax}\left(\frac{QK^{\top}}{\sqrt{d_h}} + M\right), \qquad
 \mathrm{Attn}(X) = A V W_O
 $$
 
@@ -159,7 +159,7 @@ başlıkların farklı ilişki türlerine uzmanlaşabilmesidir. `nano-10m`'de $H
 hesaplanmamak üzere saklanır (KV önbelleği). Bellek maliyeti:
 
 $$
-\text{KV önbelleği} \;=\; 2 \cdot L \cdot T \cdot H_{kv} \cdot d_h \cdot (\text{bayt/sayı})
+\text{KV önbelleği} = 2 \cdot L \cdot T \cdot H_{kv} \cdot d_h \cdot (\text{bayt/sayı})
 $$
 
 ($H_{kv}$ anahtar-değer başlığı sayısıdır; GQA kapalıyken $H_{kv} = H$.)
@@ -283,7 +283,7 @@ SwiGLU iki yerine üç matris kullanır. Parametre sayısını klasik katmanla e
 tutmak için:
 
 $$
-3df = 2 \cdot d \cdot 4d \;\;\Longrightarrow\;\; f = \frac{8d}{3}
+3df = 2 \cdot d \cdot 4d \quad \implies \quad f = \frac{8d}{3}
 $$
 
 Kod bu değeri 64'ün katına yukarı yuvarlar (tensör çekirdeklerinde hizalama
@@ -408,7 +408,7 @@ doğrular — mimaride sessiz bir değişiklik olursa sınama düşer.
 Token başına ileri + geri geçiş için yaygın kestirim:
 
 $$
-C_{\text{token}} \;\approx\; 6N \;+\; 12\,L\,H\,d_h\,T
+C_{\text{token}} \approx 6N + 12\,L\,H\,d_h\,T
 $$
 
 İlk terim: ileri geçişte parametre başına bir çarpma ve bir toplama ($2N$),

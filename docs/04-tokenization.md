@@ -36,8 +36,8 @@ alınır. Her tür, temel alfabedeki simgelerin dizisi olarak yazılır.
 1. $\mathcal{V} \leftarrow$ temel alfabe (256 bayt)
 2. Aşağıdakini $|\mathcal{V}|$ hedef büyüklüğe ulaşana dek yinele:
    a. Tüm dizilerde bitişik $(a,b)$ çiftlerinin frekansını hesapla:
-      $\;c(a,b) = \sum_{w} \mathrm{freq}(w)\cdot \#\{(a,b) \in w\}$
-   b. $(a^\*, b^\*) = \arg\max c(a,b)$
+      $c(a,b) = \sum_{w} \mathrm{freq}(w)\cdot \#\lbrace (a,b) \in w \rbrace$
+   b. $(a^*, b^*) = \operatorname*{argmax} c(a,b)$
    c. Tüm dizilerde $(a^\*,b^\*)$ örüntüsünü tek simge $a^\*b^\*$ ile değiştir
    d. $\mathcal{V} \leftarrow \mathcal{V} \cup \{a^\*b^\*\}$ ve birleştirmeyi kaydet
 
@@ -95,7 +95,7 @@ tek tek yer kaplamasını engeller; GPT-4'ün deseninde de bulunan bir düzenlem
 ### Doğurganlık (fertility)
 
 $$
-F = \frac{\#\text{token}}{\#\text{sözcük}}
+F = \frac{\text{token sayısı}}{\text{sözcük sayısı}}
 $$
 
 Sıkıştırma verimini ölçer. Aynı metin için ölçülen değerler
@@ -125,7 +125,7 @@ tüketir. Bu:
 ### %TR
 
 $$
-\%\mathrm{TR} = \frac{\big|\{\,v \in \mathcal{V} : \text{decode}(v)\text{'nin tüm karakterleri Türk alfabesinde}\,\}\big|}{|\mathcal{V}|} \times 100
+\%\mathrm{TR} = \frac{\big|\lbrace\,v \in \mathcal{V} : \text{tüm karakterleri Türk alfabesinde}\,\rbrace\big|}{|\mathcal{V}|} \times 100
 $$
 
 Sözlüğün ne kadarının hedef dile ayrılmış olduğunu ölçer.

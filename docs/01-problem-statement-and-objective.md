@@ -39,7 +39,7 @@ Bir dil modeli, token dizileri üzerinde bir olasılık dağılımı $p_\theta(x
 çarpımına ayrıştırılabilir:
 
 $$
-p_\theta(x_1, \dots, x_T) \;=\; \prod_{t=1}^{T} p_\theta\!\left(x_t \mid x_{\lt t}\right)
+p_\theta(x_1, \dots, x_T) = \prod_{t=1}^{T} p_\theta\left(x_t \mid x_{< t}\right)
 $$
 
 Bu ayrıştırma yaklaşık değildir; her zaman geçerlidir. Sonucu şudur: dizi
@@ -51,15 +51,15 @@ skor (logit) vektörü $z_t \in \mathbb{R}^V$ hesaplar ve bunu softmax ile
 olasılığa çevirir:
 
 $$
-p_\theta(x_t = j \mid x_{\lt t}) \;=\; \mathrm{softmax}(z_t)_j
-\;=\; \frac{\exp(z_{t,j})}{\sum_{k=1}^{V} \exp(z_{t,k})}
+p_\theta(x_t = j \mid x_{< t}) = \mathrm{softmax}(z_t)_j
+= \frac{\exp(z_{t,j})}{\sum_{k=1}^{V} \exp(z_{t,k})}
 $$
 
 Softmax'ın işlevi, sınırsız gerçel skorları toplamı 1 olan pozitif sayılara
 dönüştürmektir. Üstel fonksiyon seçimi keyfi değildir: softmax,
 
 $$
-\mathrm{softmax}(z) = \arg\max_{p \in \Delta^{V-1}} \Big\{ \textstyle\sum_i p_i z_i + H(p) \Big\},
+\mathrm{softmax}(z) = \operatorname*{argmax}_{p \in \Delta^{V-1}} \Big\lbrace \textstyle\sum_i p_i z_i + H(p) \Big\rbrace,
 \qquad H(p) = -\sum_i p_i \log p_i
 $$
 
@@ -90,15 +90,15 @@ kararlılık ve toplamsallık için logaritma alınır ve işaret ters çevriler
 enküçültme problemine dönüştürülür:
 
 $$
-\mathcal{L}(\theta) \;=\; -\frac{1}{BT}\sum_{b=1}^{B}\sum_{t=1}^{T}
-\log p_\theta\!\left(x^{(b)}_t \mid x^{(b)}_{\lt t}\right)
+\mathcal{L}(\theta) = -\frac{1}{BT}\sum_{b=1}^{B}\sum_{t=1}^{T}
+\log p_\theta\left(x^{(b)}_t \mid x^{(b)}_{< t}\right)
 $$
 
 Bu, hedef dağılım tek-noktalı (one-hot) olduğunda **çapraz entropi** ile
 özdeştir. Uygulamada logit'lerden doğrudan hesaplanır:
 
 $$
--\log \mathrm{softmax}(z)_{y} \;=\; \log\!\sum_{k} \exp(z_k) \;-\; z_y
+-\log \mathrm{softmax}(z)_{y} = \log\sum_{k} \exp(z_k) - z_y
 $$
 
 Sağ taraf `log-sum-exp` biçimidir ve taşma yaşamamak için
@@ -114,7 +114,7 @@ büyüklük kullanılır:
 **Şaşkınlık (perplexity).**
 
 $$
-\mathrm{PPL} \;=\; \exp(\mathcal{L})
+\mathrm{PPL} = \exp(\mathcal{L})
 $$
 
 Yorumu: model, her konumda eşit olasılıklı $\mathrm{PPL}$ seçenek arasında
@@ -126,7 +126,7 @@ sıfır etrafında ve birbirinden bağımsızdır, dolayısıyla softmax çıkt�
 dağılıma yakındır. O durumda:
 
 $$
-\mathcal{L}_0 \;\approx\; -\log \frac{1}{V} \;=\; \log V
+\mathcal{L}_0 \approx -\log \frac{1}{V} = \log V
 $$
 
 Bu, uygulamanın doğruluğunu sınamak için **en ucuz ve en güvenilir** göstergedir.
@@ -161,7 +161,7 @@ Eğitim, $\nabla_\theta \mathcal{L}$ yönünde iniş yapmaktır. Zincirin ilk ha
 $p = \mathrm{softmax}(z)$ ve $y$ tek-noktalı hedef olmak üzere:
 
 $$
-\frac{\partial \mathcal{L}}{\partial z} \;=\; p - y
+\frac{\partial \mathcal{L}}{\partial z} = p - y
 $$
 
 Yani gradyan, **kestirilen dağılım ile gerçek dağılım arasındaki farktır**.
@@ -180,7 +180,7 @@ otomatik yapar.
 
 ## 1.5 Nedensellik kısıtı
 
-$p_\theta(x_t \mid x_{\lt t})$ tanımı gereği model, $t$ konumundaki kestirimi
+$p_\theta(x_t \mid x_{< t})$ tanımı gereği model, $t$ konumundaki kestirimi
 yaparken $x_{\geq t}$'yi **görmemelidir**. Bu kısıt dikkat mekanizmasında bir
 maske ile uygulanır (§2.3).
 
