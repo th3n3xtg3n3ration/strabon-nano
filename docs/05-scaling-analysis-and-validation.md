@@ -131,7 +131,7 @@ sentetik veri gerektirir.
 Eğitilmiş model, her konumda $p = \mathrm{softmax}(z)$ dağılımını üretir.
 Metin üretmek için bu dağılımdan örnekleme yapılır.
 
-**En olası token'ı seçmek (greedy) neden yetersiz.** $\operatorname*{argmax}$ çözümlemesi
+**En olası token'ı seçmek (greedy) neden yetersiz.** $\arg\max$ çözümlemesi
 belirlenimcidir ve yüksek olasılıklı döngülere girme eğilimindedir; üretilen
 metin tekrarlı olur. Bu, modelin değil çözümleme kuralının kusurudur.
 
@@ -143,7 +143,7 @@ $$
 p_i(\tau) = \frac{\exp(z_i/\tau)}{\sum_j \exp(z_j/\tau)}
 $$
 
-- $\tau \to 0$: dağılım tek-noktalıya yaklaşır ($\operatorname*{argmax}$).
+- $\tau \to 0$: dağılım tek-noktalıya yaklaşır ($\arg\max$).
 - $\tau = 1$: modelin ürettiği dağılım değiştirilmeden kullanılır.
 - $\tau \to \infty$: düzgün dağılıma yaklaşır.
 
@@ -163,7 +163,7 @@ Olasılığa göre azalan sırada, kümülatif kütlesi $p$'yi aşan **en küç�
 tutulur:
 
 $$
-S = \operatorname*{argmin}_{S' \subseteq \mathcal{V}} \;\lvert S' \rvert
+S = \arg\min_{S' \subseteq \mathcal{V}} \;\lvert S' \rvert
 \quad \text{öyle ki} \quad \sum_{i \in S'} p_i \geq p
 $$
 

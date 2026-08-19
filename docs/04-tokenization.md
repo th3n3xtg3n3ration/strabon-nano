@@ -37,7 +37,7 @@ alınır. Her tür, temel alfabedeki simgelerin dizisi olarak yazılır.
 2. Aşağıdakini $|\mathcal{V}|$ hedef büyüklüğe ulaşana dek yinele:
    a. Tüm dizilerde bitişik $(a,b)$ çiftlerinin frekansını hesapla:
       $c(a,b) = \sum_{w} \mathrm{freq}(w)\cdot \#\lbrace (a,b) \in w \rbrace$
-   b. $(a^*, b^*) = \operatorname*{argmax} c(a,b)$
+   b. $(a^*, b^*) = \arg\max c(a,b)$
    c. Tüm dizilerde $(a^\*,b^\*)$ örüntüsünü tek simge $a^\*b^\*$ ile değiştir
    d. $\mathcal{V} \leftarrow \mathcal{V} \cup \{a^\*b^\*\}$ ve birleştirmeyi kaydet
 

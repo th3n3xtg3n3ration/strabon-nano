@@ -59,7 +59,7 @@ Softmax'ın işlevi, sınırsız gerçel skorları toplamı 1 olan pozitif sayı
 dönüştürmektir. Üstel fonksiyon seçimi keyfi değildir: softmax,
 
 $$
-\mathrm{softmax}(z) = \operatorname*{argmax}_{p \in \Delta^{V-1}} \Big\lbrace \textstyle\sum_i p_i z_i + H(p) \Big\rbrace,
+\mathrm{softmax}(z) = \arg\max_{p \in \Delta^{V-1}} \Big\lbrace \textstyle\sum_i p_i z_i + H(p) \Big\rbrace,
 \qquad H(p) = -\sum_i p_i \log p_i
 $$
 
