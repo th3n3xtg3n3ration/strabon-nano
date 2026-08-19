@@ -1,6 +1,6 @@
 ---
 
-**[← 3. Eğitim yordamı](03-egitim-yordami.md) | [İçindekiler](README.md) | Sonraki: [5. Ölçekleme ve doğrulama →](05-olcekleme-ve-dogrulama.md)**
+**[← 3. Eğitim yordamı](03-training-procedure.md) | [İçindekiler](README.md) | Sonraki: [5. Ölçekleme ve doğrulama →](05-scaling-analysis-and-validation.md)**
 
 ---
 
@@ -252,5 +252,5 @@ maliyeti ortadan kalkar ve `np.memmap` ile rastgele erişim mümkün olur (§3.5
 
 ---
 
-**[← 3. Eğitim yordamı](03-egitim-yordami.md) | [İçindekiler](README.md) | Sonraki: [5. Ölçekleme ve doğrulama →](05-olcekleme-ve-dogrulama.md)**
+**[← 3. Eğitim yordamı](03-training-procedure.md) | [İçindekiler](README.md) | Sonraki: [5. Ölçekleme ve doğrulama →](05-scaling-analysis-and-validation.md)**
 

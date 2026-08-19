@@ -1,6 +1,6 @@
 ---
 
-**[← 4. Tokenizasyon](04-tokenizasyon.md) | [İçindekiler](README.md) | Sonraki: [Ek A — Notasyon →](A-notasyon.md)**
+**[← 4. Tokenizasyon](04-tokenization.md) | [İçindekiler](README.md) | Sonraki: [Ek A — Notasyon →](06-notation-and-terms.md)**
 
 ---
 
@@ -297,5 +297,5 @@ yasası çalışmasıdır ve §5.1'de kullanılan biçimin öncülüdür.*
 
 ---
 
-**[← 4. Tokenizasyon](04-tokenizasyon.md) | [İçindekiler](README.md) | Sonraki: [Ek A — Notasyon →](A-notasyon.md)**
+**[← 4. Tokenizasyon](04-tokenization.md) | [İçindekiler](README.md) | Sonraki: [Ek A — Notasyon →](06-notation-and-terms.md)**
 

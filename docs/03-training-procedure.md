@@ -1,6 +1,6 @@
 ---
 
-**[← 2. Model mimarisi](02-model-mimarisi.md) | [İçindekiler](README.md) | Sonraki: [4. Tokenizasyon →](04-tokenizasyon.md)**
+**[← 2. Model mimarisi](02-model-architecture.md) | [İçindekiler](README.md) | Sonraki: [4. Tokenizasyon →](04-tokenization.md)**
 
 ---
 
@@ -315,5 +315,5 @@ miktarı veya epok sayısı değiştiğinde bu varsayım bozulur.
 
 ---
 
-**[← 2. Model mimarisi](02-model-mimarisi.md) | [İçindekiler](README.md) | Sonraki: [4. Tokenizasyon →](04-tokenizasyon.md)**
+**[← 2. Model mimarisi](02-model-architecture.md) | [İçindekiler](README.md) | Sonraki: [4. Tokenizasyon →](04-tokenization.md)**
 

@@ -1,6 +1,6 @@
 ---
 
-**[← 5. Ölçekleme ve doğrulama](05-olcekleme-ve-dogrulama.md) | [İçindekiler](README.md)**
+**[← 5. Ölçekleme ve doğrulama](05-scaling-analysis-and-validation.md) | [İçindekiler](README.md)**
 
 ---
 
@@ -209,4 +209,4 @@ Koddaki `batch_size` mikro-yığındır; etkin yığın biriktirmeyle çarpılı
 
 ---
 
-**[← 5. Ölçekleme ve doğrulama](05-olcekleme-ve-dogrulama.md) | [İçindekiler](README.md)**
+**[← 5. Ölçekleme ve doğrulama](05-scaling-analysis-and-validation.md) | [İçindekiler](README.md)**

@@ -1,6 +1,6 @@
 ---
 
-**[← İçindekiler](README.md) | Sonraki: [2. Model mimarisi →](02-model-mimarisi.md)**
+**[← İçindekiler](README.md) | Sonraki: [2. Model mimarisi →](02-model-architecture.md)**
 
 ---
 
@@ -205,4 +205,4 @@ $0{,}0$, sonek $1{,}27$.
 
 ---
 
-**[← İçindekiler](README.md) | Sonraki: [2. Model mimarisi →](02-model-mimarisi.md)**
+**[← İçindekiler](README.md) | Sonraki: [2. Model mimarisi →](02-model-architecture.md)**

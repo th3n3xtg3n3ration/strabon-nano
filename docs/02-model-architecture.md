@@ -1,6 +1,6 @@
 ---
 
-**[← 1. Problem tanımı](01-problem-ve-amac-fonksiyonu.md) | [İçindekiler](README.md) | Sonraki: [3. Eğitim yordamı →](03-egitim-yordami.md)**
+**[← 1. Problem tanımı](01-problem-statement-and-objective.md) | [İçindekiler](README.md) | Sonraki: [3. Eğitim yordamı →](03-training-procedure.md)**
 
 ---
 
@@ -444,5 +444,5 @@ yaklaşır.
 
 ---
 
-**[← 1. Problem tanımı](01-problem-ve-amac-fonksiyonu.md) | [İçindekiler](README.md) | Sonraki: [3. Eğitim yordamı →](03-egitim-yordami.md)**
+**[← 1. Problem tanımı](01-problem-statement-and-objective.md) | [İçindekiler](README.md) | Sonraki: [3. Eğitim yordamı →](03-training-procedure.md)**
 

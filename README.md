@@ -34,12 +34,12 @@ that operation was chosen, and what the measurable consequence is.
 
 | Part | Scope |
 |---|---|
-| [1. Problem tanımı ve amaç fonksiyonu](docs/01-problem-ve-amac-fonksiyonu.md) | Autoregressive factorisation, softmax, cross-entropy, the `log V` sanity check, closed-form gradient, causality constraint |
-| [2. Model mimarisi](docs/02-model-mimarisi.md) | Embedding, RMSNorm, scaled dot-product attention with the `sqrt(d_h)` derivation, GQA, RoPE with a proof of the relative-position property, SwiGLU and the `8d/3` derivation, residual init scaling, weight tying, parameter and FLOP formulas |
-| [3. Eğitim yordamı](docs/03-egitim-yordami.md) | AdamW update equations and bias correction, decoupled weight decay, warmup plus cosine schedule, gradient clipping, accumulation, mixed precision and loss scaling, the wall-clock budget |
-| [4. Tokenizasyon ve Türkçe](docs/04-tokenizasyon.md) | BPE algorithm, consequences of byte-level encoding, pre-tokenization, fertility and %TR, Turkish agglutinative morphology, data filters |
-| [5. Ölçekleme, çözümleme ve doğrulama](docs/05-olcekleme-ve-dogrulama.md) | Chinchilla law and its derivation, the Turkish data ceiling, temperature / top-k / top-p, rationale for all 33 tests, expected performance limits |
-| [Ek A. Notasyon](docs/A-notasyon.md) | Symbol table, glossary, concept-to-code map |
+| [1. Problem tanımı ve amaç fonksiyonu](docs/01-problem-statement-and-objective.md) | Autoregressive factorisation, softmax, cross-entropy, the `log V` sanity check, closed-form gradient, causality constraint |
+| [2. Model mimarisi](docs/02-model-architecture.md) | Embedding, RMSNorm, scaled dot-product attention with the `sqrt(d_h)` derivation, GQA, RoPE with a proof of the relative-position property, SwiGLU and the `8d/3` derivation, residual init scaling, weight tying, parameter and FLOP formulas |
+| [3. Eğitim yordamı](docs/03-training-procedure.md) | AdamW update equations and bias correction, decoupled weight decay, warmup plus cosine schedule, gradient clipping, accumulation, mixed precision and loss scaling, the wall-clock budget |
+| [4. Tokenizasyon ve Türkçe](docs/04-tokenization.md) | BPE algorithm, consequences of byte-level encoding, pre-tokenization, fertility and %TR, Turkish agglutinative morphology, data filters |
+| [5. Ölçekleme, çözümleme ve doğrulama](docs/05-scaling-analysis-and-validation.md) | Chinchilla law and its derivation, the Turkish data ceiling, temperature / top-k / top-p, rationale for all 33 tests, expected performance limits |
+| [Ek A. Notasyon](docs/06-notation-and-terms.md) | Symbol table, glossary, concept-to-code map |
 
 Start at [docs/README.md](docs/README.md).
 
