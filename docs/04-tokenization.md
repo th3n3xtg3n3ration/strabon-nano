@@ -39,7 +39,7 @@ alınır. Her tür, temel alfabedeki simgelerin dizisi olarak yazılır.
       $c(a,b) = \sum_{w} \mathrm{freq}(w) \cdot \mathrm{n}\big((a,b) \in w\big)$
    b. $(a^*, b^*) = \arg\max c(a,b)$
    c. Tüm dizilerde $(a^\*,b^\*)$ örüntüsünü tek simge $a^\*b^\*$ ile değiştir
-   d. $\mathcal{V} \leftarrow \mathcal{V} \cup \{a^\*b^\*\}$ ve birleştirmeyi kaydet
+   d. $\mathcal{V} \leftarrow \mathcal{V} \cup \lbrace a^*b^* \rbrace$ ve birleştirmeyi kaydet
 
 Kodlama sırasında aynı birleştirmeler **öğrenildikleri sırayla** uygulanır.
 
@@ -217,7 +217,7 @@ alfabesini kapsar. Dolayısıyla ikinci ölçüt tek başına İngilizce metni
 **elemez**: "This is an English document" dizisinin harflerinin tamamı Türk
 alfabesindedir.
 
-Türkçe'ye özgü harf kümesi $\{$ç, ğ, ı, ö, ş, ü$\}$ üzerinden ölçülen oranlar:
+Türkçe'ye özgü harf kümesi {ç, ğ, ı, ö, ş, ü} üzerinden ölçülen oranlar:
 
 | Metin türü | Oran |
 |---|---|
