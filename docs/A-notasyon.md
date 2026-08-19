@@ -91,7 +91,7 @@ tek-noktalı olduğunda negatif log-olabilirliğe indirgenir. → 1.3
 dizisi örnekleme süreci. → 5.2
 
 **Dikkat** *(attention)* — Her konumun geçmiş konumlardan ağırlıklı bilgi
-topladığı işlem, $\operatorname{softmax}(QK^{\top}/\sqrt{d_h} + M)\,V\,W_O$. → 2.3
+topladığı işlem, $\mathrm{softmax}(QK^{\top}/\sqrt{d_h} + M)\,V\,W_O$. → 2.3
 
 **Doğrulama kümesi** *(validation set)* — Eğitimde kullanılmayan, genelleme
 başarımını ölçmeye ayrılmış veri parçası. → 3.8

@@ -41,7 +41,7 @@ Bir dil modeli, token dizileri üzerinde bir olasılık dağılımı $p_\theta(x
 çarpımına ayrıştırılabilir:
 
 $$
-p_\theta(x_1, \dots, x_T) \;=\; \prod_{t=1}^{T} p_\theta\!\left(x_t \mid x_{<t}\right)
+p_\theta(x_1, \dots, x_T) \;=\; \prod_{t=1}^{T} p_\theta\!\left(x_t \mid x_{\lt t}\right)
 $$
 
 Bu ayrıştırma yaklaşık değildir; her zaman geçerlidir. Sonucu şudur: dizi
@@ -53,7 +53,7 @@ skor (logit) vektörü $z_t \in \mathbb{R}^V$ hesaplar ve bunu softmax ile
 olasılığa çevirir:
 
 $$
-p_\theta(x_t = j \mid x_{<t}) \;=\; \operatorname{softmax}(z_t)_j
+p_\theta(x_t = j \mid x_{\lt t}) \;=\; \mathrm{softmax}(z_t)_j
 \;=\; \frac{\exp(z_{t,j})}{\sum_{k=1}^{V} \exp(z_{t,k})}
 $$
 
@@ -61,7 +61,7 @@ Softmax'ın işlevi, sınırsız gerçel skorları toplamı 1 olan pozitif sayı
 dönüştürmektir. Üstel fonksiyon seçimi keyfi değildir: softmax,
 
 $$
-\operatorname{softmax}(z) = \arg\max_{p \in \Delta^{V-1}} \Big\{ \textstyle\sum_i p_i z_i + H(p) \Big\},
+\mathrm{softmax}(z) = \arg\max_{p \in \Delta^{V-1}} \Big\{ \textstyle\sum_i p_i z_i + H(p) \Big\},
 \qquad H(p) = -\sum_i p_i \log p_i
 $$
 
@@ -93,14 +93,14 @@ enküçültme problemine dönüştürülür:
 
 $$
 \mathcal{L}(\theta) \;=\; -\frac{1}{BT}\sum_{b=1}^{B}\sum_{t=1}^{T}
-\log p_\theta\!\left(x^{(b)}_t \mid x^{(b)}_{<t}\right)
+\log p_\theta\!\left(x^{(b)}_t \mid x^{(b)}_{\lt t}\right)
 $$
 
 Bu, hedef dağılım tek-noktalı (one-hot) olduğunda **çapraz entropi** ile
 özdeştir. Uygulamada logit'lerden doğrudan hesaplanır:
 
 $$
--\log \operatorname{softmax}(z)_{y} \;=\; \log\!\sum_{k} \exp(z_k) \;-\; z_y
+-\log \mathrm{softmax}(z)_{y} \;=\; \log\!\sum_{k} \exp(z_k) \;-\; z_y
 $$
 
 Sağ taraf `log-sum-exp` biçimidir ve taşma yaşamamak için
@@ -160,7 +160,7 @@ Sapmanın olağan nedenleri ilkleme ölçeği hatası veya hedef sızıntısıd�
 
 Eğitim, $\nabla_\theta \mathcal{L}$ yönünde iniş yapmaktır. Zincirin ilk halkası
 — kaybın logit'lere göre türevi — kapalı biçimde ve çarpıcı biçimde sadedir.
-$p = \operatorname{softmax}(z)$ ve $y$ tek-noktalı hedef olmak üzere:
+$p = \mathrm{softmax}(z)$ ve $y$ tek-noktalı hedef olmak üzere:
 
 $$
 \frac{\partial \mathcal{L}}{\partial z} \;=\; p - y
@@ -182,7 +182,7 @@ otomatik yapar.
 
 ## 1.5 Nedensellik kısıtı
 
-$p_\theta(x_t \mid x_{<t})$ tanımı gereği model, $t$ konumundaki kestirimi
+$p_\theta(x_t \mid x_{\lt t})$ tanımı gereği model, $t$ konumundaki kestirimi
 yaparken $x_{\geq t}$'yi **görmemelidir**. Bu kısıt dikkat mekanizmasında bir
 maske ile uygulanır (§2.3).
 

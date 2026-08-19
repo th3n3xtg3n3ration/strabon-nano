@@ -130,7 +130,7 @@ sentetik veri gerektirir.
 
 ## 5.2 Çözümleme (decoding)
 
-Eğitilmiş model, her konumda $p = \operatorname{softmax}(z)$ dağılımını üretir.
+Eğitilmiş model, her konumda $p = \mathrm{softmax}(z)$ dağılımını üretir.
 Metin üretmek için bu dağılımdan örnekleme yapılır.
 
 **En olası token'ı seçmek (greedy) neden yetersiz.** $\arg\max$ çözümlemesi
