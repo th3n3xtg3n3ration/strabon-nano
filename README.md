@@ -1,5 +1,10 @@
 # Strabon Nano
 
+[![License: MIT](https://img.shields.io/badge/code-MIT-blue.svg)](LICENSE)
+[![Data: ODC-By](https://img.shields.io/badge/data-ODC--By-green.svg)](https://opendatacommons.org/licenses/by/)
+[![Data: CC BY-SA 4.0](https://img.shields.io/badge/data-CC%20BY--SA%204.0-green.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
+
 A small Turkish language model trained from scratch. Everything from tokenizer
 to sampling lives in this repository; no pretrained weights are used.
 
@@ -29,12 +34,12 @@ that operation was chosen, and what the measurable consequence is.
 
 | Part | Scope |
 |---|---|
-| [1. Problem tanımı ve amaç fonksiyonu](docs/01-problem-ve-amac-fonksiyonu.md) | Autoregressive factorisation, softmax, cross-entropy, the `log V` sanity check, closed-form gradient, causality constraint |
-| [2. Model mimarisi](docs/02-model-mimarisi.md) | Embedding, RMSNorm, scaled dot-product attention with the `sqrt(d_h)` derivation, GQA, RoPE with a proof of the relative-position property, SwiGLU and the `8d/3` derivation, residual init scaling, weight tying, parameter and FLOP formulas |
-| [3. Eğitim yordamı](docs/03-egitim-yordami.md) | AdamW update equations and bias correction, decoupled weight decay, warmup plus cosine schedule, gradient clipping, accumulation, mixed precision and loss scaling, the wall-clock budget |
-| [4. Tokenizasyon ve Türkçe](docs/04-tokenizasyon.md) | BPE algorithm, consequences of byte-level encoding, pre-tokenization, fertility and %TR, Turkish agglutinative morphology, data filters |
-| [5. Ölçekleme, çözümleme ve doğrulama](docs/05-olcekleme-ve-dogrulama.md) | Chinchilla law and its derivation, the Turkish data ceiling, temperature / top-k / top-p, rationale for all 33 tests, expected performance limits |
-| [Ek A. Notasyon](docs/A-notasyon.md) | Symbol table, glossary, concept-to-code map |
+| [1. Problem tanımı ve amaç fonksiyonu](docs/01-problem-statement-and-objective.md) | Autoregressive factorisation, softmax, cross-entropy, the `log V` sanity check, closed-form gradient, causality constraint |
+| [2. Model mimarisi](docs/02-model-architecture.md) | Embedding, RMSNorm, scaled dot-product attention with the `sqrt(d_h)` derivation, GQA, RoPE with a proof of the relative-position property, SwiGLU and the `8d/3` derivation, residual init scaling, weight tying, parameter and FLOP formulas |
+| [3. Eğitim yordamı](docs/03-training-procedure.md) | AdamW update equations and bias correction, decoupled weight decay, warmup plus cosine schedule, gradient clipping, accumulation, mixed precision and loss scaling, the wall-clock budget |
+| [4. Tokenizasyon ve Türkçe](docs/04-tokenization.md) | BPE algorithm, consequences of byte-level encoding, pre-tokenization, fertility and %TR, Turkish agglutinative morphology, data filters |
+| [5. Ölçekleme, çözümleme ve doğrulama](docs/05-scaling-analysis-and-validation.md) | Chinchilla law and its derivation, the Turkish data ceiling, temperature / top-k / top-p, rationale for all 33 tests, expected performance limits |
+| [Ek A. Notasyon](docs/06-notation-and-terms.md) | Symbol table, glossary, concept-to-code map |
 
 Start at [docs/README.md](docs/README.md).
 
@@ -50,7 +55,7 @@ a one-hour run.
 3. Run:
 
 ```python
-!git clone https://github.com/<user>/strabon-nano.git
+!git clone https://github.com/th3n3xtg3n3ration/strabon-nano.git
 %cd strabon-nano
 !pip install -q -r requirements.txt
 !python scripts/run_kaggle.py --stage all --minutes 60
@@ -257,3 +262,49 @@ from pretraining at this size. That is Phase 5-7 of the roadmap.
 
 Code is MIT. Trained weights inherit the licences of the training data
 (FineWeb-2 ODC-By, Wikipedia CC BY-SA).
+
+---
+
+## Roadmap
+
+| Phase | Status | Description |
+|---|---|---|
+| **1. Pretraining pipeline** | ✅ This repository | Tokenizer, data, model, training loop, tests |
+| 2. Scaling runs | 🔜 | Systematic Chinchilla sweeps up to `nano-50m` |
+| 3. Evaluation harness | 🔜 | Turkish benchmarks, perplexity baselines |
+| 4. Data quality | 🔜 | Better filters, deduplication at scale |
+| 5–7. Post-training | 🔮 | Instruction tuning on an existing open base model |
+
+---
+
+## Contributing
+
+Contributions are welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md) before
+opening a pull request.
+
+Quick checklist:
+
+```bash
+# Run all offline tests before pushing
+python -m tests.test_model
+python -m tests.test_tokenizer
+python -m tests.test_data
+```
+
+All tests must pass. New features should include a test.
+
+---
+
+## Citation
+
+If you use this code in academic work, please cite:
+
+```bibtex
+@misc{strabonnano2026,
+  title        = {Strabon Nano: A Reproducible Turkish Language Model Training Pipeline},
+  author       = {th3n3xtg3n3ration},
+  year         = {2026},
+  howpublished = {\url{https://github.com/th3n3xtg3n3ration/strabon-nano}},
+  note         = {Phase 1 — pretraining pipeline, MIT licence}
+}
+```

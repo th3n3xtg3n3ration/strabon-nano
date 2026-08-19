@@ -186,13 +186,14 @@ class Strabon(nn.Module):
     def configure_optimizer(self, weight_decay: float, lr: float,
                             betas: tuple[float, float], device_type: str):
         """Decay matrices only; norm gains and any 1-D parameters stay undecayed."""
+        import inspect
         params = [p for p in self.parameters() if p.requires_grad]
         groups = [
             {"params": [p for p in params if p.dim() >= 2], "weight_decay": weight_decay},
             {"params": [p for p in params if p.dim() < 2], "weight_decay": 0.0},
         ]
         extra = {}
-        if device_type == "cuda" and "fused" in (torch.optim.AdamW.__init__.__doc__ or ""):
+        if device_type == "cuda" and "fused" in inspect.signature(torch.optim.AdamW).parameters:
             extra["fused"] = True
         return torch.optim.AdamW(groups, lr=lr, betas=betas, **extra)
 

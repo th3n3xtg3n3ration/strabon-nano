@@ -1,3 +1,9 @@
+---
+
+**[← 1. Problem tanımı](01-problem-statement-and-objective.md) | [İçindekiler](README.md) | Sonraki: [3. Eğitim yordamı →](03-training-procedure.md)**
+
+---
+
 # 2. Model mimarisi
 
 Strabon, çözücü-yalnız (decoder-only) bir dönüştürücüdür (transformer). Bu
@@ -85,7 +91,7 @@ $$
 Dikkat ağırlıkları ve çıktı:
 
 $$
-A = \operatorname{softmax}\!\left(\frac{QK^{\top}}{\sqrt{d_h}} + M\right), \qquad
+A = \mathrm{softmax}\!\left(\frac{QK^{\top}}{\sqrt{d_h}} + M\right), \qquad
 \mathrm{Attn}(X) = A V W_O
 $$
 
@@ -107,17 +113,17 @@ olsun. İç çarpım:
 
 $$
 \mathbb{E}[q^{\top}k] = 0, \qquad
-\operatorname{Var}(q^{\top}k) = \sum_{i=1}^{d_h} \operatorname{Var}(q_i k_i) = d_h
+\mathrm{Var}(q^{\top}k) = \sum_{i=1}^{d_h} \mathrm{Var}(q_i k_i) = d_h
 $$
 
 Yani standart sapma $\sqrt{d_h}$'dir ve $d_h$ büyüdükçe logit'ler büyür.
 Büyük logit'lerde softmax doyuma girer: çıktı neredeyse tek-noktalı olur ve
-Jacobian'ı $\operatorname{diag}(p) - pp^{\top}$ sıfıra yaklaşır — **gradyan
+Jacobian'ı $\mathrm{diag}(p) - pp^{\top}$ sıfıra yaklaşır — **gradyan
 kaybolur**. $\sqrt{d_h}$'ye bölmek varyansı 1'e sabitler ve bu doyumu önler.
 
 **Ölçüm.** Rastgele $q, k$ ile iç çarpım varyansı:
 
-| $d_h$ | $\operatorname{Var}(q^{\top}k)$ ölçülen | kuram | $\sqrt{d_h}$'ye bölündükten sonra |
+| $d_h$ | $\mathrm{Var}(q^{\top}k)$ ölçülen | kuram | $\sqrt{d_h}$'ye bölündükten sonra |
 |---|---|---|---|
 | 16 | 15,97 | 16 | 0,998 |
 | 64 | 64,19 | 64 | 1,003 |
@@ -131,7 +137,7 @@ Doyumun somut etkisi ($d_h = 64$, 32 anahtar üzerinden softmax):
 | $\sqrt{d_h}$ ile bölünerek | 0,165 | 3,02 nat |
 
 Üst sınır $\log 32 = 3{,}47$ nat'tır. Bölme yapılmadığında dağılım neredeyse
-tek-noktalıdır; softmax Jacobian'ı $\operatorname{diag}(p) - pp^{\top}$ bu
+tek-noktalıdır; softmax Jacobian'ı $\mathrm{diag}(p) - pp^{\top}$ bu
 durumda sıfıra yakındır ve dikkat katmanı ilklemede öğrenemez.
 
 ### Çok başlıklı dikkat
@@ -438,4 +444,5 @@ yaklaşır.
 
 ---
 
-**Sonraki:** [3. Eğitim yordamı](03-egitim-yordami.md)
+**[← 1. Problem tanımı](01-problem-statement-and-objective.md) | [İçindekiler](README.md) | Sonraki: [3. Eğitim yordamı →](03-training-procedure.md)**
+

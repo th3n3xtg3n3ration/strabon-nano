@@ -1,3 +1,9 @@
+---
+
+**[← 4. Tokenizasyon](04-tokenization.md) | [İçindekiler](README.md) | Sonraki: [Ek A — Notasyon →](06-notation-and-terms.md)**
+
+---
+
 # 5. Ölçekleme, çözümleme ve doğrulama
 
 ## 5.1 Ölçekleme yasaları
@@ -124,7 +130,7 @@ sentetik veri gerektirir.
 
 ## 5.2 Çözümleme (decoding)
 
-Eğitilmiş model, her konumda $p = \operatorname{softmax}(z)$ dağılımını üretir.
+Eğitilmiş model, her konumda $p = \mathrm{softmax}(z)$ dağılımını üretir.
 Metin üretmek için bu dağılımdan örnekleme yapılır.
 
 **En olası token'ı seçmek (greedy) neden yetersiz.** $\arg\max$ çözümlemesi
@@ -291,4 +297,5 @@ yasası çalışmasıdır ve §5.1'de kullanılan biçimin öncülüdür.*
 
 ---
 
-**Sonraki:** [Ek A — Notasyon ve terimler](A-notasyon.md)
+**[← 4. Tokenizasyon](04-tokenization.md) | [İçindekiler](README.md) | Sonraki: [Ek A — Notasyon →](06-notation-and-terms.md)**
+

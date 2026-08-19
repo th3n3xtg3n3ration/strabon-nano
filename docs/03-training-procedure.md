@@ -1,3 +1,9 @@
+---
+
+**[← 2. Model mimarisi](02-model-architecture.md) | [İçindekiler](README.md) | Sonraki: [4. Tokenizasyon →](04-tokenization.md)**
+
+---
+
 # 3. Eğitim yordamı
 
 Eğitim, §1.3'teki $\mathcal{L}(\theta)$'yi enküçültmektir. Bu bölüm kullanılan
@@ -309,4 +315,5 @@ miktarı veya epok sayısı değiştiğinde bu varsayım bozulur.
 
 ---
 
-**Sonraki:** [4. Tokenizasyon ve Türkçe](04-tokenizasyon.md)
+**[← 2. Model mimarisi](02-model-architecture.md) | [İçindekiler](README.md) | Sonraki: [4. Tokenizasyon →](04-tokenization.md)**
+
