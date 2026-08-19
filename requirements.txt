@@ -1,0 +1,7 @@
+torch>=2.2
+tokenizers>=0.15
+datasets>=2.18
+numpy>=1.24
+
+# optional, for experiment tracking
+# wandb>=0.16
