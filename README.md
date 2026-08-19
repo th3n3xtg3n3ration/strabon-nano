@@ -1,5 +1,10 @@
 # Strabon Nano
 
+[![License: MIT](https://img.shields.io/badge/code-MIT-blue.svg)](LICENSE)
+[![Data: ODC-By](https://img.shields.io/badge/data-ODC--By-green.svg)](https://opendatacommons.org/licenses/by/)
+[![Data: CC BY-SA 4.0](https://img.shields.io/badge/data-CC%20BY--SA%204.0-green.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
+
 A small Turkish language model trained from scratch. Everything from tokenizer
 to sampling lives in this repository; no pretrained weights are used.
 
@@ -50,7 +55,7 @@ a one-hour run.
 3. Run:
 
 ```python
-!git clone https://github.com/<user>/strabon-nano.git
+!git clone https://github.com/th3n3xtg3n3ration/strabon-nano.git
 %cd strabon-nano
 !pip install -q -r requirements.txt
 !python scripts/run_kaggle.py --stage all --minutes 60
@@ -257,3 +262,49 @@ from pretraining at this size. That is Phase 5-7 of the roadmap.
 
 Code is MIT. Trained weights inherit the licences of the training data
 (FineWeb-2 ODC-By, Wikipedia CC BY-SA).
+
+---
+
+## Roadmap
+
+| Phase | Status | Description |
+|---|---|---|
+| **1. Pretraining pipeline** | ✅ This repository | Tokenizer, data, model, training loop, tests |
+| 2. Scaling runs | 🔜 | Systematic Chinchilla sweeps up to `nano-50m` |
+| 3. Evaluation harness | 🔜 | Turkish benchmarks, perplexity baselines |
+| 4. Data quality | 🔜 | Better filters, deduplication at scale |
+| 5–7. Post-training | 🔮 | Instruction tuning on an existing open base model |
+
+---
+
+## Contributing
+
+Contributions are welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md) before
+opening a pull request.
+
+Quick checklist:
+
+```bash
+# Run all offline tests before pushing
+python -m tests.test_model
+python -m tests.test_tokenizer
+python -m tests.test_data
+```
+
+All tests must pass. New features should include a test.
+
+---
+
+## Citation
+
+If you use this code in academic work, please cite:
+
+```bibtex
+@misc{strabonnano2026,
+  title        = {Strabon Nano: A Reproducible Turkish Language Model Training Pipeline},
+  author       = {th3n3xtg3n3ration},
+  year         = {2026},
+  howpublished = {\url{https://github.com/th3n3xtg3n3ration/strabon-nano}},
+  note         = {Phase 1 — pretraining pipeline, MIT licence}
+}
+```

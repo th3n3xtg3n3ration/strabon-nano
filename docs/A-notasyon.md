@@ -1,3 +1,9 @@
+---
+
+**[← 5. Ölçekleme ve doğrulama](05-olcekleme-ve-dogrulama.md) | [İçindekiler](README.md)**
+
+---
+
 # Ek A — Notasyon ve terimler
 
 ## A.1 Semboller
@@ -200,3 +206,7 @@ Koddaki `batch_size` mikro-yığındır; etkin yığın biriktirmeyle çarpılı
 | Süre bütçesi | `strabon/train.py` | `_benchmark_step_time` |
 | Çözümleme | `strabon/model.py` | `Strabon.generate` |
 | Kontrol noktası yükleme, örnekleme arayüzü | `strabon/sample.py` | `load_checkpoint`, `main` |
+
+---
+
+**[← 5. Ölçekleme ve doğrulama](05-olcekleme-ve-dogrulama.md) | [İçindekiler](README.md)**

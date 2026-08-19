@@ -1,3 +1,9 @@
+---
+
+**[← 3. Eğitim yordamı](03-egitim-yordami.md) | [İçindekiler](README.md) | Sonraki: [5. Ölçekleme ve doğrulama →](05-olcekleme-ve-dogrulama.md)**
+
+---
+
 # 4. Tokenizasyon ve Türkçe'nin getirdiği kısıtlar
 
 ## 4.1 Neden token
@@ -246,4 +252,5 @@ maliyeti ortadan kalkar ve `np.memmap` ile rastgele erişim mümkün olur (§3.5
 
 ---
 
-**Sonraki:** [5. Ölçekleme, çözümleme ve doğrulama](05-olcekleme-ve-dogrulama.md)
+**[← 3. Eğitim yordamı](03-egitim-yordami.md) | [İçindekiler](README.md) | Sonraki: [5. Ölçekleme ve doğrulama →](05-olcekleme-ve-dogrulama.md)**
+

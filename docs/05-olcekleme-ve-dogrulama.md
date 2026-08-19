@@ -1,3 +1,9 @@
+---
+
+**[← 4. Tokenizasyon](04-tokenizasyon.md) | [İçindekiler](README.md) | Sonraki: [Ek A — Notasyon →](A-notasyon.md)**
+
+---
+
 # 5. Ölçekleme, çözümleme ve doğrulama
 
 ## 5.1 Ölçekleme yasaları
@@ -291,4 +297,5 @@ yasası çalışmasıdır ve §5.1'de kullanılan biçimin öncülüdür.*
 
 ---
 
-**Sonraki:** [Ek A — Notasyon ve terimler](A-notasyon.md)
+**[← 4. Tokenizasyon](04-tokenizasyon.md) | [İçindekiler](README.md) | Sonraki: [Ek A — Notasyon →](A-notasyon.md)**
+

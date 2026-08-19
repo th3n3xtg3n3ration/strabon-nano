@@ -1,3 +1,9 @@
+---
+
+**[← İçindekiler](README.md) | Sonraki: [2. Model mimarisi →](02-model-mimarisi.md)**
+
+---
+
 # 1. Problem tanımı ve amaç fonksiyonu
 
 ## 1.1 Kapsam
@@ -199,4 +205,4 @@ $0{,}0$, sonek $1{,}27$.
 
 ---
 
-**Sonraki:** [2. Model mimarisi](02-model-mimarisi.md)
+**[← İçindekiler](README.md) | Sonraki: [2. Model mimarisi →](02-model-mimarisi.md)**

@@ -1,3 +1,9 @@
+---
+
+**[← 1. Problem tanımı](01-problem-ve-amac-fonksiyonu.md) | [İçindekiler](README.md) | Sonraki: [3. Eğitim yordamı →](03-egitim-yordami.md)**
+
+---
+
 # 2. Model mimarisi
 
 Strabon, çözücü-yalnız (decoder-only) bir dönüştürücüdür (transformer). Bu
@@ -438,4 +444,5 @@ yaklaşır.
 
 ---
 
-**Sonraki:** [3. Eğitim yordamı](03-egitim-yordami.md)
+**[← 1. Problem tanımı](01-problem-ve-amac-fonksiyonu.md) | [İçindekiler](README.md) | Sonraki: [3. Eğitim yordamı →](03-egitim-yordami.md)**
+
