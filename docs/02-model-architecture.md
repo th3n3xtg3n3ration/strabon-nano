@@ -96,7 +96,7 @@ $$
 Nedensel maske:
 
 $$
-M_{ij} = \begin{cases} 0 & j \leq i \\ -\infty & j > i \end{cases}
+M_{ij} = \begin{cases} 0 & j \leq i \\ -\infty & j \gt i \end{cases}
 $$
 
 $-\infty$ girdileri softmax sonrasında tam sıfır ağırlık verir; böylece §1.5'teki
@@ -167,7 +167,7 @@ $$
 Uzun bağlamda bu terim model ağırlıklarını geçebilir.
 
 GQA, sorgu başlığı sayısını korurken anahtar-değer başlığı sayısını
-$H_{kv} < H$'ye düşürür; her $K,V$ çifti $H/H_{kv}$ sorgu başlığı tarafından
+$H_{kv} \lt H$'ye düşürür; her $K,V$ çifti $H/H_{kv}$ sorgu başlığı tarafından
 paylaşılır. `mini-500m`'de $H = 16$, $H_{kv} = 4$ olduğundan önbellek **dörtte
 bire** iner.
 

@@ -39,7 +39,7 @@ Bir dil modeli, token dizileri üzerinde bir olasılık dağılımı $p_\theta(x
 çarpımına ayrıştırılabilir:
 
 $$
-p_\theta(x_1, \dots, x_T) = \prod_{t=1}^{T} p_\theta\left(x_t \mid x_{< t}\right)
+p_\theta(x_1, \dots, x_T) = \prod_{t=1}^{T} p_\theta\left(x_t \mid x_{\lt t}\right)
 $$
 
 Bu ayrıştırma yaklaşık değildir; her zaman geçerlidir. Sonucu şudur: dizi
@@ -51,7 +51,7 @@ skor (logit) vektörü $z_t \in \mathbb{R}^V$ hesaplar ve bunu softmax ile
 olasılığa çevirir:
 
 $$
-p_\theta(x_t = j \mid x_{< t}) = \mathrm{softmax}(z_t)_j
+p_\theta(x_t = j \mid x_{\lt t}) = \mathrm{softmax}(z_t)_j
 = \frac{\exp(z_{t,j})}{\sum_{k=1}^{V} \exp(z_{t,k})}
 $$
 
@@ -91,7 +91,7 @@ enküçültme problemine dönüştürülür:
 
 $$
 \mathcal{L}(\theta) = -\frac{1}{BT}\sum_{b=1}^{B}\sum_{t=1}^{T}
-\log p_\theta\left(x^{(b)}_t \mid x^{(b)}_{< t}\right)
+\log p_\theta\left(x^{(b)}_t \mid x^{(b)}_{\lt t}\right)
 $$
 
 Bu, hedef dağılım tek-noktalı (one-hot) olduğunda **çapraz entropi** ile
@@ -180,7 +180,7 @@ otomatik yapar.
 
 ## 1.5 Nedensellik kısıtı
 
-$p_\theta(x_t \mid x_{< t})$ tanımı gereği model, $t$ konumundaki kestirimi
+$p_\theta(x_t \mid x_{\lt t})$ tanımı gereği model, $t$ konumundaki kestirimi
 yaparken $x_{\geq t}$'yi **görmemelidir**. Bu kısıt dikkat mekanizmasında bir
 maske ile uygulanır (§2.3).
 
@@ -190,7 +190,7 @@ kullanılamaz hâle gelir. Bu hata çökmeye yol açmadığı ve kayıp eğrisin
 *iyileştirdiği* için sınamasız fark edilmesi olası değildir.
 
 `tests/test_model.py` içindeki sınama, $t \geq 10$ konumlarındaki token'ları
-değiştirip $t < 10$ çıktılarının değişmediğini doğrular. Ölçülen fark: önek
+değiştirip $t \lt 10$ çıktılarının değişmediğini doğrular. Ölçülen fark: önek
 $0{,}0$, sonek $1{,}27$.
 
 ---

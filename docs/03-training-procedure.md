@@ -91,8 +91,8 @@ birleşimidir. $S_w$ ısınma adımı, $S$ toplam adım sayısı olmak üzere
 $$
 \eta_t =
 \begin{cases}
-\eta_{\max} \cdot \dfrac{t+1}{S_w}, & t < S_w \\[10pt]
-\eta_{\min} + \dfrac{1}{2}\left(1 + \cos\dfrac{\pi (t - S_w)}{S - S_w}\right)\left(\eta_{\max} - \eta_{\min}\right), & S_w \leq t < S \\[10pt]
+\eta_{\max} \cdot \dfrac{t+1}{S_w}, & t \lt S_w \\[10pt]
+\eta_{\min} + \dfrac{1}{2}\left(1 + \cos\dfrac{\pi (t - S_w)}{S - S_w}\right)\left(\eta_{\max} - \eta_{\min}\right), & S_w \leq t \lt S \\[10pt]
 \eta_{\min}, & t \geq S
 \end{cases}
 $$
@@ -112,7 +112,7 @@ yaklaşır; sabit büyüklükte adımlar bu bölgenin etrafında salınım üret
 yakınsamayı engeller. Kosinüs biçimi, doğrusal sönüme göre sonda daha uzun süre
 küçük $\eta$'da kalır ve ampirik olarak biraz daha düşük son kayıp verir.
 
-**$\eta_{\min} > 0$ neden.** Tam sıfıra inmek öğrenmeyi sonda tamamen durdurur
+**$\eta_{\min} \gt 0$ neden.** Tam sıfıra inmek öğrenmeyi sonda tamamen durdurur
 ve çizelgenin son bölümünü boşa harcar. $\rho = 0{,}1$ yaygın bir seçimdir.
 
 ---
@@ -168,7 +168,7 @@ Bellekte hiçbir zaman 16 diziden fazlası bulunmaz.
 ## 3.5 Veri yükleme
 
 Tokenize edilmiş korpus, tek boyutlu bir `uint16` dizisi olarak diske yazılır
-($V < 65536$ için; büyük sözlüklerde `uint32`). Yükleyici bu dosyayı `np.memmap`
+($V \lt 65536$ için; büyük sözlüklerde `uint32`). Yükleyici bu dosyayı `np.memmap`
 ile açar: dosya belleğe kopyalanmaz, işletim sistemi yalnızca dokunulan
 sayfaları getirir. Bu sayede korpus RAM'den büyük olabilir.
 

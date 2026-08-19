@@ -143,11 +143,11 @@ $$
 p_i(\tau) = \frac{\exp(z_i/\tau)}{\sum_j \exp(z_j/\tau)}
 $$
 
-- $\tau \to 0$: dağılım tek-noktalıya yaklaşır ($\arg\max$).
+- $\tau \to 0$: dağılım tek-noktalıya yaklaşır ($\operatorname*{argmax}$).
 - $\tau = 1$: modelin ürettiği dağılım değiştirilmeden kullanılır.
 - $\tau \to \infty$: düzgün dağılıma yaklaşır.
 
-$\tau < 1$ yüksek olasılıkları keskinleştirir, $\tau > 1$ düzleştirir.
+$\tau \lt 1$ yüksek olasılıkları keskinleştirir, $\tau \gt 1$ düzleştirir.
 Varsayılan $0{,}8$.
 
 ### Top-$k$ süzmesi
@@ -163,7 +163,7 @@ Olasılığa göre azalan sırada, kümülatif kütlesi $p$'yi aşan **en küç�
 tutulur:
 
 $$
-S = \arg\min_{S' \subseteq \mathcal{V}} \;\lvert S' \rvert
+S = \operatorname*{argmin}_{S' \subseteq \mathcal{V}} \;\lvert S' \rvert
 \quad \text{öyle ki} \quad \sum_{i \in S'} p_i \geq p
 $$
 
@@ -208,14 +208,14 @@ python -m tests.test_data        16 sınama
 | Sınama | Denetlenen özellik | Yakaladığı hata |
 |---|---|---|
 | İlk kayıp $\approx \log V$ | İlklemenin düzgün dağılım üretmesi | İlkleme ölçeği hatası, hedef sızıntısı |
-| Nedensellik | $t$ çıktısının $x_{>t}$'den bağımsızlığı | Maske hatası — kayıp *iyileşir*, sınamasız görülmez |
+| Nedensellik | $t$ çıktısının $x_{\gt t}$'den bağımsızlığı | Maske hatası — kayıp *iyileşir*, sınamasız görülmez |
 | Tek yığını ezberleme | Gradyan yolunun bütünlüğü | Kopuk gradyan, donmuş parametre |
 | Her parametrenin gradyan alması | Ölü bileşen olmaması | Bağlanmamış katman, yanlış `requires_grad` |
 | Ağırlık bağlama | $E$ ve çıkış başının aynı bellek | Kopya alınması, tasarrufun kaybı |
 | RoPE norm koruması | $\lVert R_m q\rVert = \lVert q \rVert$ | Yanlış açı/eşleştirme, bilgi kaybı |
-| GQA yolu | $H_{kv} < H$ ile ileri geçiş | Yanlış tekrarlama, boyut hatası |
+| GQA yolu | $H_{kv} \lt H$ ile ileri geçiş | Yanlış tekrarlama, boyut hatası |
 | Üretim | Geçerli token kimlikleri | Süzme sonrası boş dağılım |
-| Bağlam sınırı | $T > T_{\max}$ için hata | Sessiz kırpma |
+| Bağlam sınırı | $T \gt T_{\max}$ için hata | Sessiz kırpma |
 | Parametre formülü | `param_count()` = gerçek sayı | Mimaride belgelenmemiş değişiklik |
 
 **Nedensellik sınaması** özellikle önemlidir. Ölçülen değerler: $t \geq 10$
