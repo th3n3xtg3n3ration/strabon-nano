@@ -1,3 +1,11 @@
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/logo.svg">
+    <source media="(prefers-color-scheme: light)" srcset="assets/logo-light.svg">
+    <img alt="Strabon Nano Logo" src="assets/logo.svg" width="550">
+  </picture>
+</p>
+
 # Strabon Nano — Teknik Belgeler
 
 Bu dizi, Strabon Nano'nun kuramsal temelini ve uygulama ayrıntılarını tanımlar.

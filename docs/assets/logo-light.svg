@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250" width="800" height="250">
+  <rect width="100%" height="100%" fill="#FBF8F3" rx="20"/>
+  <g transform="translate(65, 25)">
+    <g fill="none" stroke="#16243F" stroke-width="9">
+      <circle cx="100" cy="104" r="76"/>
+      <circle cx="106" cy="97" r="56"/>
+      <circle cx="112" cy="90" r="36"/>
+    </g>
+    <circle cx="118" cy="83" r="17" fill="#C8553D"/>
+  </g>
+  <text x="285" y="128" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Georgia, serif" font-size="68" font-weight="700" fill="#16243F" letter-spacing="2">Strabon</text>
+  <text x="288" y="168" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="19" font-weight="600" fill="#C8553D" letter-spacing="7">TÜRKÇE DİL MODELİ</text>
+</svg>

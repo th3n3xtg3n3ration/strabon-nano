@@ -1,3 +1,11 @@
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo.svg">
+    <source media="(prefers-color-scheme: light)" srcset="docs/assets/logo-light.svg">
+    <img alt="Strabon Nano Logo" src="docs/assets/logo.svg" width="600">
+  </picture>
+</p>
+
 # Strabon Nano
 
 [![License: MIT](https://img.shields.io/badge/code-MIT-blue.svg)](LICENSE)
