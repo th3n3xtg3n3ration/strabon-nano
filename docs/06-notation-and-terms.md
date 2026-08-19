@@ -1,5 +1,3 @@
----
-
 **[← 5. Ölçekleme ve doğrulama](05-scaling-analysis-and-validation.md) | [İçindekiler](README.md)**
 
 ---

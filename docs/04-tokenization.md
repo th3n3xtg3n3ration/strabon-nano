@@ -1,5 +1,3 @@
----
-
 **[← 3. Eğitim yordamı](03-training-procedure.md) | [İçindekiler](README.md) | Sonraki: [5. Ölçekleme ve doğrulama →](05-scaling-analysis-and-validation.md)**
 
 ---

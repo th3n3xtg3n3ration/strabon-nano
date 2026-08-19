@@ -1,5 +1,3 @@
----
-
 **[← 4. Tokenizasyon](04-tokenization.md) | [İçindekiler](README.md) | Sonraki: [Ek A — Notasyon →](06-notation-and-terms.md)**
 
 ---

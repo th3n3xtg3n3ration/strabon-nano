@@ -1,5 +1,3 @@
----
-
 **[← 1. Problem tanımı](01-problem-statement-and-objective.md) | [İçindekiler](README.md) | Sonraki: [3. Eğitim yordamı →](03-training-procedure.md)**
 
 ---

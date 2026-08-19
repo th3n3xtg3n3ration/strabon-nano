@@ -1,5 +1,3 @@
----
-
 **[← İçindekiler](README.md) | Sonraki: [2. Model mimarisi →](02-model-architecture.md)**
 
 ---
