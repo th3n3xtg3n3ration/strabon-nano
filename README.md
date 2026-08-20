@@ -16,7 +16,7 @@
 A small Turkish language model trained from scratch. Everything from tokenizer
 to sampling lives in this repository; no pretrained weights are used.
 
-This is Phase 1 of the Strabon roadmap. The goal is not a usable assistant —
+This is Phase 1 of the Strabon roadmap. The goal is not a usable assistant;
 it is a complete, measured, reproducible training pipeline.
 
 ---
@@ -53,7 +53,7 @@ Start at [docs/README.md](docs/README.md).
 
 ---
 
-## Quick start — one hour on Kaggle
+## Quick start: one hour on Kaggle
 
 Kaggle gives 30 free GPU hours per week, which makes it the easiest place for
 a one-hour run.
@@ -63,6 +63,7 @@ a one-hour run.
 3. Run:
 
 ```python
+!rm -rf strabon-nano
 !git clone https://github.com/th3n3xtg3n3ration/strabon-nano.git
 %cd strabon-nano
 !pip install -q -r requirements.txt

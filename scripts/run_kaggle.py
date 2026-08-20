@@ -8,6 +8,7 @@ Setup in the Kaggle UI:
 
 Then, in a notebook cell:
 
+    !rm -rf strabon-nano
     !git clone https://github.com/<user>/strabon-nano.git
     %cd strabon-nano
     !pip install -q -r requirements.txt
