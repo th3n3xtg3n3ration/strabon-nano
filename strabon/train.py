@@ -33,7 +33,24 @@ from .model import Strabon
 def setup_device(requested_precision: str):
     if torch.cuda.is_available():
         device, name = "cuda", torch.cuda.get_device_name(0)
-        has_bf16 = torch.cuda.is_bf16_supported()
+        major, minor = torch.cuda.get_device_capability(0)
+        arch, built_for = f"sm_{major}{minor}", torch.cuda.get_arch_list()
+
+        # A PyTorch wheel ships kernels only for the architectures it was
+        # compiled against. On an unlisted card every CUDA op dies with
+        # "no kernel image is available for execution on the device", but only
+        # at the first launch, which can be far into a run. Fail early here.
+        if built_for and arch not in built_for:
+            raise SystemExit(
+                f"[env] {name} is compute capability {arch}; this PyTorch build "
+                f"only carries kernels for {' '.join(built_for)}.\n"
+                f"      Kaggle: Settings > Accelerator > GPU T4 x2 ({arch}).\n"
+                f"      Elsewhere: install a wheel compiled for {arch}."
+            )
+
+        # Runtime checks can report True on pre-Ampere cards, but hardware bf16
+        # tensor cores start at sm_80.
+        has_bf16 = major >= 8
     else:
         device, name, has_bf16 = "cpu", "CPU", False
 
@@ -267,6 +284,15 @@ def train(model_cfg: ModelConfig, cfg: TrainConfig,
                  if val_loader else float("nan"))
     _save(out_dir / "last.pt", raw_model, optimizer, cfg.total_steps - 1,
           model_cfg, cfg, final_val)
+
+    # The loop compares checkpoints only on eval_every boundaries, so the final
+    # model was never considered for best.pt.
+    if val_loader and final_val < best_val:
+        best_val = final_val
+        _save(out_dir / "best.pt", raw_model, optimizer, cfg.total_steps - 1,
+              model_cfg, cfg, final_val)
+        print(f"  >> final model beats step-{cfg.total_steps - 1} best "
+              f"(val {final_val:.4f}), best.pt updated", flush=True)
 
     elapsed = time.time() - started
     print(f"\n[done] {elapsed / 60:.1f} minutes, "
